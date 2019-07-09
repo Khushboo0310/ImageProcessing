@@ -1,0 +1,74 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+  <!-- <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a [routerLink]="['/showplugins']"[queryParams]="{plugin:'loadPlugin'}">loadPlugin</a></li>
+      <li><a [routerLink]="['/showplugins']"[queryParams]="{plugin:'executePlugin'}">executePlugin</a></li>
+    </ul>
+  </div> -->
+
+  <div class="d-block">
+      <form>
+          <div >
+            <div class="btn btn-primary btn-sm">
+              <input type="file" (change)="fileChangeEvent($event)" />
+            </div>
+          </div>
+        </form>
+        
+        
+        
+        <div>
+          <image-cropper
+              [imageChangedEvent]="imageChangedEvent"
+              [maintainAspectRatio]="false"
+              [aspectRatio]="4 / 3"
+              [resizeToWidth]="256"
+              [cropperMinWidth]="128"
+              [onlyScaleDown]="true"
+              [roundCropper]="false"
+              format="png"
+              outputType="base64"
+              (imageCropped)="imageCropped($event)"
+              (imageLoaded)="imageLoaded()"
+              (cropperReady)="cropperReady()"
+              (loadImageFailed)="loadImageFailed()"
+              [style.display]="showCropper ? null : 'none'"
+          ></image-cropper>
+        </div>
+        <br>
+        <div>
+        <img [src]="croppedImage" />
+        <br>
+        <br>
+        <button (click)="myFunc()" [hidden]="showProcess" class="btn btn-success">process</button>
+        </div>
+  </div>
+  <br><br>
+  
+    
+    
+
+
+
+
+  
+  <div ngbDropdown class="d-block">
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Select Plugin</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem [routerLink]="['/showplugins']"[queryParams]="{plugin:'SamplePlugin1'}">Sample Plugin 1</button>
+      <button ngbDropdownItem [routerLink]="['/showplugins']"[queryParams]="{plugin:'SamplePlugin2'}">Sample Plugin 2</button>
+    </div>
+  </div>
+  
+</div>
+
+
+<router-outlet></router-outlet>

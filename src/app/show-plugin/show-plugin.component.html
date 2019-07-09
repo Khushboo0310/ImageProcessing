@@ -1,0 +1,24 @@
+<div style="text-align:center">
+    <div><br>
+        <div *ngFor="let boxes of checkbox">
+            <div class="checkbox">
+                <label>&nbsp;<input type="checkbox" value={{boxes.options}}>{{boxes.options}}</label>
+            </div>
+        </div>
+        <div *ngFor="let btns of radiobtn">
+            <label>{{btns.title}} : </label>
+            <div *ngFor="let op of btns.options">
+                <label class="radio-inline"><input type="radio" name="optradio">{{op}}</label>
+            </div>
+
+        </div>
+
+        <div *ngFor="let fields of textbox">
+            <label>{{fields.title}} : </label>&nbsp;
+            <input type="{{fields.type}}">
+        </div>
+    </div>
+
+
+
+</div>
