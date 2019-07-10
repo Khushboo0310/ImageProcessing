@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Routes,Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-plugin',
@@ -14,7 +14,12 @@ export class ShowPluginComponent implements OnInit {
   checkbox: Array<Object> = [];
   radiobtn: Array<Object> = [];
   textbox: Array<Object> = [];
-
+  should_open = false;
+  openChildComponent(){
+    console.log(this.should_open);
+    this.should_open = true;
+    console.log(this.should_open);
+   }
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
@@ -51,6 +56,8 @@ export class ShowPluginComponent implements OnInit {
           });
 
       });
+
+     
 
   }
 

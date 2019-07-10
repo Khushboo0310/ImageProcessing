@@ -19,6 +19,12 @@
         </div>
     </div>
 
-
+    <button class="btn btn-danger" (click)="openChildComponent()">Analyse</button>
+    <div *ngIf="should_open">
+            <app-graph></app-graph>
+         </div>
 
 </div>
+
+
+

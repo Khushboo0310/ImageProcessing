@@ -9,12 +9,14 @@ import { ShowPluginComponent } from './show-plugin/show-plugin.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap'; 
 import { FormsModule } from '@angular/forms';
 import { ImageCropperModule } from './image-cropper/image-cropper.module';
+import { GraphComponent } from './graph/graph.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowPluginComponent
+    ShowPluginComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
