@@ -34,7 +34,7 @@ export class ShowPluginComponent implements OnInit {
         this.radiobtn = [];
         this.textbox = [];
 
-        this.http.get("http://localhost:5000/" + this.plugin)
+        this.http.get("http://localhost:5000/plugins/" + this.plugin)
           .subscribe(data => {
             // console.log(this.plugin,data);
             this.UIdata = data[0];
