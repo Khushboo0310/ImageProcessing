@@ -1,0 +1,60 @@
+{
+    "SamplePlugin1": [
+        {
+        "checkbox": [
+                {
+            "options": 
+                "Sample Checkbox" 
+                }
+            ],
+        "radiobutton" : [
+                {
+            "title":"Radio Group",
+            "options": [
+                "Radio btn 1","Radio btn 2"
+                    ]
+                }
+            ],
+        "textbox" : [
+                {
+            "title": "Input Text",
+            "type" : "text"
+                }
+            ]
+        }
+    ],
+    "SamplePlugin2": [
+        {
+        "checkbox": [
+                {
+            "options": 
+                "Sample checkbox 1"
+                    
+                },
+                {
+                    "options": 
+                        "Sample checkbox 2"
+                            
+                        }
+            ],
+        "radiobutton" : [
+                {
+            "title":"Radio Button Group",
+            "options": [
+                "Radio btn 1","Radio btn 2"
+                    ]
+                }
+            ],
+        "textbox" : [
+                {
+            "title": "Username",
+            "type" : "text"
+                },
+                {
+                    "title": "Password",
+                    "type" : "password"
+                        }
+            ]
+        }
+    ]
+}

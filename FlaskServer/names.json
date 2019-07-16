@@ -1,0 +1,10 @@
+[
+    {
+        "plugin": "SamplePlugin1",
+        "name" : "Sample Plugin 1"
+    },
+    {
+        "plugin": "SamplePlugin2",
+        "name" : "Sample Plugin 2"
+    }
+]
