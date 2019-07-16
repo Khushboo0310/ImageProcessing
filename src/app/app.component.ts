@@ -1,25 +1,35 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { ImageCroppedEvent } from './image-cropper/interfaces/image-cropped-event.interface';
 import { ImageCropperComponent } from './image-cropper/component/image-cropper.component';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+ 
   title = 'to the Plugin Module';
 
-  redirect(plugin:string){
-    window.location.href="/showplugins?plugin="+plugin;
-  }
+  plugins:any;
 
   imageChangedEvent: any = '';
   croppedImage: any = '';
   showCropper = false;
   showProcess=true;
 
-  // @ViewChild(ImageCropperComponent) imageCropper: ImageCropperComponent;
+  constructor(private http: HttpClient){}
+
+
+  @ViewChild(ImageCropperComponent,{static:true}) imageCropper: ImageCropperComponent;
+
+   ngOnInit(): void {
+    this.http.get("http://localhost:5000/plugins/").subscribe(data=>{
+      console.log(data);
+      this.plugins = data;
+    });
+  }
+  
 
   fileChangeEvent(event: any): void {
       this.imageChangedEvent = event;

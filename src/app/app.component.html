@@ -62,9 +62,9 @@
   
   <div ngbDropdown class="d-block">
     <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Select Plugin</button>
-    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-      <button ngbDropdownItem [routerLink]="['/showplugins']"[queryParams]="{plugin:'SamplePlugin1'}">Sample Plugin 1</button>
-      <button ngbDropdownItem [routerLink]="['/showplugins']"[queryParams]="{plugin:'SamplePlugin2'}">Sample Plugin 2</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+     
+      <button *ngFor="let p of plugins" ngbDropdownItem [routerLink]="['/showplugins']"[queryParams]="{plugin:p['plugin']}">{{p["name"]}}</button>
     </div>
   </div>
   

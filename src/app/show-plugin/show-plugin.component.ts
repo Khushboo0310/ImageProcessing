@@ -9,6 +9,7 @@ import { Routes,Router } from '@angular/router';
   styleUrls: ['./show-plugin.component.css']
 })
 export class ShowPluginComponent implements OnInit {
+  
   plugin: string;
   UIdata: Object;
   checkbox: Array<Object> = [];
@@ -34,7 +35,7 @@ export class ShowPluginComponent implements OnInit {
         this.radiobtn = [];
         this.textbox = [];
 
-        this.http.get("http://localhost:5000/" + this.plugin)
+        this.http.get("http://localhost:5000/plugin/" + this.plugin)
           .subscribe(data => {
             // console.log(this.plugin,data);
             this.UIdata = data[0];
